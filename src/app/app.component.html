@@ -4,6 +4,19 @@
     <div class="col-md-12">
       <app-recipes></app-recipes>
       <app-shopping-list></app-shopping-list>
+      <app-cockpit
+      (serverCreated)="onServerAdded($event)"
+      (bluePrintCreated)="onBluePrintAdded($event)"
+      ></app-cockpit>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+        <app-server-element
+          [srvElement] = "serverElement"
+          *ngFor="let serverElement of serverElements"
+        ></app-server-element>
     </div>
   </div>
 </div>
